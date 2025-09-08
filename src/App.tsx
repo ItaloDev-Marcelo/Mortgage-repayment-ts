@@ -1,9 +1,8 @@
-import Form from  './components/Form'
-
+import CalculateRepaymentsLayout from './layout/CalculateRepaymentsLayout'
 function App() {
 
   return (
-    <Form />
+    <CalculateRepaymentsLayout />
   )
 }
 

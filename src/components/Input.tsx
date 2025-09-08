@@ -11,8 +11,7 @@ const Input = ({register, error, name,title, subText, direction}:InputProps) => 
                <span>{subText}</span> 
             </div>
         </div>
-        {/* <span>{error[name]?.message}</span> */}
-        <ErrorText error={error[name]} />
+       {error &&  <ErrorText error={error[name]} />}
     </div>
   )
 }

@@ -1,19 +1,20 @@
-// import React from 'react'
-import UseForm from '../hooks/UseForm'
+
 import type { MortgageForm } from '../schema/zodSchema';
 import Input from './Input'
 import Calculator from '../assets/icon-calculator.svg'
 import InputRadios from './InputRadio';
-// ' 'mortgageType' 
-const Form = () => {
-  const {Amount,Term,Rate,MortType, register, handleSubmit, errors, reset} = UseForm();
-  const resetForm = () => reset()
+import type { FormProps } from '../types/Form.type';
 
-  const formResult = (data: MortgageForm) => {
-       console.log(data)
+
+const Form = ({register,handleSubmit, errors, reset}:FormProps) => {
+  const resetForm = () => {
+     reset()
   }
 
-  console.log(Amount,Term,Rate,MortType)
+  const formResult = (data: MortgageForm) => {
+       console.log('formResult:', data)
+  }
+
 
   return (
     <form onSubmit={handleSubmit(formResult)}>
