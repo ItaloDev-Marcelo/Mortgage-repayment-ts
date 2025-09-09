@@ -1,9 +1,9 @@
-// import EmpathyIcon from './'
+import EmpathyIcon from '../assets/illustration-empty.svg'
 const RepaymentsEmpathy = () => {
   return (
     <section>
         <figure>
-             <img src='' alt='' />
+             <img src={EmpathyIcon} alt='' />
         </figure>
        <h1>Results shown here</h1>
        <p>Complete the form and click “calculate repayments” to see what 
