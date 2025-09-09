@@ -17,14 +17,14 @@ const Form = ({register,handleSubmit, errors, reset}:FormProps) => {
 
 
   return (
-    <form onSubmit={handleSubmit(formResult)}>
-         <div>
-           <legend>Mortgage Calculator</legend>  <button onClick={resetForm}>Clear All</button>
+    <form onSubmit={handleSubmit(formResult)} className='bg-amber-200 w-[330px] xl:w-[400px]'>
+         <div className='flex flex-col xl:flex-row xl:justify-between pr-5.5'>
+           <legend className='text-gray-500'>Mortgage Calculator</legend>  <button onClick={resetForm} className='border-b-1 border-gray-300 text-gray-500 font-semibold'>Clear All</button>
          </div>
          <Input register={register} error={errors} 
           name='mortgageAmount' title='Mortgage Amount'
           subText='£' direction='l' />
-         <div>
+         <div className='xl:flex xl:gap-1.5'>
          <Input register={register} error={errors}
           name='mortgageTerm' title='Mortgage Term '
           subText='years' direction='r'
@@ -40,7 +40,7 @@ const Form = ({register,handleSubmit, errors, reset}:FormProps) => {
             <InputRadios value='Interest Only' register={register} name='mortgageType' />
          </div>
 
-         <button type='submit'> <img src={Calculator} alt='' /> Calculate Pepayments</button>
+         <button type='submit' className='btn bg-lime-400 w-[250px] rounded-3xl py-[20px] mt-4'> <img src={Calculator} alt='' /> Calculate Pepayments</button>
     </form>
   )
 }

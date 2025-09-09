@@ -1,5 +1,4 @@
-import React from 'react'
-
+// import EmpathyIcon from './'
 const RepaymentsEmpathy = () => {
   return (
     <section>
