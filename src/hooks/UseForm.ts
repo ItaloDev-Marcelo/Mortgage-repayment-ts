@@ -1,6 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { mortgage } from '../schema/zodSchema'
+import { useState } from 'react'
 const UseForm = () => {
    const {register, handleSubmit, formState: {errors}, watch, reset} = useForm({resolver: zodResolver(mortgage)})
 
@@ -9,7 +10,13 @@ const UseForm = () => {
    const Rate = watch('mortgageRate') || '';
    const MortType  = watch('mortgageType') || '';
 
-   return {Amount,Term,Rate,MortType, register, handleSubmit, errors, reset}
+   const [show, setShow] = useState(false)
+
+  const ShowResults = () => {
+   setShow(!show)
+  }
+
+   return {Amount,Term,Rate,MortType, register, handleSubmit, errors, reset, ShowResults, show}
 
 }
 

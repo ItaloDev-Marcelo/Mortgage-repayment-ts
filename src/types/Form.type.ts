@@ -5,5 +5,6 @@ export type FormProps = {
   register: UseFormRegister<MortgageForm>
   handleSubmit: UseFormHandleSubmit<MortgageForm>,
   errors?: FieldErrors<MortgageForm>,
-  reset: UseFormReset<MortgageForm>
+  reset: UseFormReset<MortgageForm>,
+  ShowResults: () => void
 }

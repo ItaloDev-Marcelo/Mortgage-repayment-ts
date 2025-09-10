@@ -5,14 +5,15 @@ import Calculator from '../assets/icon-calculator.svg'
 import InputRadios from './InputRadio';
 import type { FormProps } from '../types/Form.type';
 
-
-const Form = ({register,handleSubmit, errors, reset}:FormProps) => {
+const Form = ({register,handleSubmit, errors, reset, ShowResults}:FormProps) => {
   const resetForm = () => {
      reset()
+     ShowResults()
   }
 
   const formResult = (data: MortgageForm) => {
        console.log('formResult:', data)
+       ShowResults()
   }
 
 
@@ -38,6 +39,7 @@ const Form = ({register,handleSubmit, errors, reset}:FormProps) => {
             <label>Mortgage Type</label>
             <InputRadios value='Repayment' register={register} name='mortgageType' />
             <InputRadios value='Interest Only' register={register} name='mortgageType' />
+            <span>{errors?.mortgageType?.message}</span>
          </div>
 
          <button type='submit' className='btn bg-lime-400 w-[250px] rounded-3xl py-[20px] mt-4'> <img src={Calculator} alt='' /> Calculate Pepayments</button>
