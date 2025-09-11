@@ -38,8 +38,8 @@ const Form = ({register,handleSubmit, errors, reset, ShowResults,resetResults}:F
 
          <div>
             <label>Mortgage Type</label>
-            <InputRadios value='Repayment' register={register} name='mortgageType' />
-            <InputRadios value='Interest Only' register={register} name='mortgageType' />
+            <InputRadios value='Repayment' register={register} name='mortgageType' error={errors}  />
+            <InputRadios value='Interest Only' register={register} name='mortgageType' error={errors}  />
             <span>{errors?.mortgageType?.message}</span>
          </div>
 
