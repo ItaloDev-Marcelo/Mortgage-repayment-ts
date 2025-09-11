@@ -5,10 +5,11 @@ import Calculator from '../assets/icon-calculator.svg'
 import InputRadios from './InputRadio';
 import type { FormProps } from '../types/Form.type';
 
-const Form = ({register,handleSubmit, errors, reset, ShowResults}:FormProps) => {
+const Form = ({register,handleSubmit, errors, reset, ShowResults,resetResults}:FormProps) => {
   const resetForm = () => {
      reset()
      ShowResults()
+     resetResults()
   }
 
   const formResult = (data: MortgageForm) => {
