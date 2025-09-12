@@ -10,13 +10,13 @@ const Form = ({register,handleSubmit, errors, reset, ShowResults,resetResults}:F
 
   const resetForm = () => {
      reset()
-     ShowResults()
+     ShowResults(false)
      resetResults()
   }
 
   const formResult = (data: MortgageForm) => {
        console.log('formResult:', data)
-       ShowResults()
+       ShowResults(true)
   }
 
   

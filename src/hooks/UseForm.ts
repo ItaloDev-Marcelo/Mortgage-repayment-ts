@@ -12,8 +12,8 @@ const UseForm = () => {
 
    const [show, setShow] = useState(false)
 
-  const ShowResults = () => {
-   setShow(!show)
+  const ShowResults = (valor:boolean) => {
+   setShow(valor)
   }
 
    return {Amount,Term,Rate,MortType, register, handleSubmit, errors, reset, ShowResults, show}

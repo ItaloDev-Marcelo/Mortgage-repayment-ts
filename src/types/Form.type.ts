@@ -6,6 +6,6 @@ export type FormProps = {
   handleSubmit: UseFormHandleSubmit<MortgageForm>,
   errors?: FieldErrors<MortgageForm>,
   reset: UseFormReset<MortgageForm>,
-  ShowResults: () => void,
+  ShowResults: (valor:boolean) => void,
   resetResults: () => void
 }
