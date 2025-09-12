@@ -1,16 +1,14 @@
+import type React from "react"
 
 type RepaymentsDispalyProps ={
-  monthPayment?:number,
-  totalPayment?: number
+  children: React.ReactNode
 }
 
-const RepaymentsDisplay = ({monthPayment = 0,totalPayment  = 0}:RepaymentsDispalyProps) => {
+const RepaymentsDisplay = ({children}:RepaymentsDispalyProps) => {
   
-  console.log(monthPayment,totalPayment)
-
   return (
-    <div>
-        
+    <div className="bg-[#133040] mt-4">
+        {children}
     </div>
   )
 }

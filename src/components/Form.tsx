@@ -6,6 +6,8 @@ import InputRadios from './InputRadio';
 import type { FormProps } from '../types/Form.type';
 
 const Form = ({register,handleSubmit, errors, reset, ShowResults,resetResults}:FormProps) => {
+
+
   const resetForm = () => {
      reset()
      ShowResults()
@@ -17,15 +19,21 @@ const Form = ({register,handleSubmit, errors, reset, ShowResults,resetResults}:F
        ShowResults()
   }
 
+  
+
+ 
 
   return (
-    <form onSubmit={handleSubmit(formResult)} className='bg-amber-200 w-[330px] xl:w-[400px]'>
+    <form onSubmit={handleSubmit(formResult)} className='w-[300px] xl:w-[400px] py-4'>
          <div className='flex flex-col xl:flex-row xl:justify-between pr-5.5'>
-           <legend className='text-gray-500'>Mortgage Calculator</legend>  <button onClick={resetForm} className='border-b-1 border-gray-300 text-gray-500 font-semibold'>Clear All</button>
+           <legend className='text-[##133040] mb-3 md:mb-0 font-semibold'>Mortgage Calculator</legend>  
+           <button onClick={resetForm} className='border-b-1 border-gray-300 
+           text-gray-500 text-left font-semibold w-[70px] mt-0.5 md:mt-0'>Clear All</button>
          </div>
          <Input register={register} error={errors} 
           name='mortgageAmount' title='Mortgage Amount'
-          subText='£' direction='l' />
+          subText='£' direction='l'  />
+
          <div className='xl:flex xl:gap-1.5'>
          <Input register={register} error={errors}
           name='mortgageTerm' title='Mortgage Term '

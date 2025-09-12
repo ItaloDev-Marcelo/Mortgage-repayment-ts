@@ -3,7 +3,7 @@ type MortageContainerProps = {children: React.ReactNode}
 
 const MortageContainer = ({children}:MortageContainerProps ) => {
   return (
-    <div>{children}</div>
+    <div className='flex flex-col justify-center items-center'>{children}</div>
   )
 }
 
