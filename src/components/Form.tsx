@@ -5,7 +5,6 @@ import type { FormProps } from '../types/Form.type';
 import ErrorText from './ErrorTxt';
 const Form = ({register,handleSubmit, errors, ShowResults}:FormProps) => {
 
-
   const formResult = () => {
        ShowResults(true)
   }
