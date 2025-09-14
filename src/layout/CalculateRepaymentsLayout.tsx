@@ -7,13 +7,17 @@ import RepaymentsDisplay from '../helpers/RepaymentsDisplay';
 import { useEffect, useState } from 'react';
 
 const CalculateRepaymentsLayout = () => {
- const {Amount,Term,Rate,MortType,register, handleSubmit, errors, reset, ShowResults, show} = UseForm();
+ const {Amount,Term,Rate,MortType,register, handleSubmit, errors, reset, ShowResults, show, clearErrors} = UseForm();
 
  
     const [result, setResult] = useState({
      MonthPaymentResult: '',
      TotalPaymentResult : ''
     })
+
+
+
+    console.log(show)
    
     const calRepayment = (Amount: number,Term: number,Rate: number, MortType: string) =>  {
          const taxaMonth = Rate / 100 / 12;
@@ -55,11 +59,10 @@ const CalculateRepaymentsLayout = () => {
  
  
 
- console.log(result)
-
   return (
     <MortageContainer>
-        <Form register={register} errors={errors} reset={reset} handleSubmit={handleSubmit} resetResults={resetResults}
+        <Form register={register}  errors={errors} reset={reset} handleSubmit={handleSubmit} 
+         resetResults={resetResults} clearErrors={clearErrors}
          ShowResults={ShowResults}
  />
       <RepaymentsDisplay>
