@@ -7,7 +7,7 @@ type RepaymentsDispalyProps ={
 const RepaymentsDisplay = ({children}:RepaymentsDispalyProps) => {
   
   return (
-    <div className="bg-[#133040] h-full mt-4 pt-10 rounded-bl-[2.5em]  xl:mt-0">
+    <div className="bg-[#133040] h-full mt-4 pt-10 xl:rounded-bl-[2.5em]  xl:mt-0">
         {children}
     </div>
   )
