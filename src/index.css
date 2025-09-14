@@ -2,9 +2,8 @@
 @plugin "daisyui";
 
 @theme {
-  --breakpoint-xs: 30rem;
-  --breakpoint-2xl: 100rem;
-  --breakpoint-3xl: 120rem;
+  --breakpoint-lt: 85rem;
+   --breakpoint-dt: 90rem;
 }
 
 input[type='radio'] {
@@ -13,4 +12,22 @@ input[type='radio'] {
 
 label:has(input[type='radio']:checked) {
   border-color: #A3E635;
+}
+
+@media(min-width: 768px) {
+  body {
+    margin:0;
+    padding:0;
+    width: 100vw;
+    height: 100vh;
+    background: #e3f4fc;
+  }
+
+}
+
+@media(min-width: 1440px) {
+  .MortageContainer {
+     transform: scale(1.1)
+  }
+
 }

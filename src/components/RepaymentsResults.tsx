@@ -2,10 +2,10 @@ type RepaymentsProps = {MonthPaymentResult: string, TotalPaymentResult: string}
 const RepaymentsResults = ({MonthPaymentResult, TotalPaymentResult}:RepaymentsProps ) => {
   return (
     <section className="flex flex-col  py-4 px-5">
-       <h1 className='text-white font-semibold mb-2 text-[1.3em]'>Your results</h1>
-       <p className="text-white opacity-90 mb-4"> Your results are shown below based on the information you provided. 
+       <h1 className='text-white font-semibold mb-2 text-[1.3em] xl:mb-7'>Your results</h1>
+       <p className="text-white opacity-90 mb-4 xl:mb-7"> Your results are shown below based on the information you provided. 
   To adjust the results, edit the form and click “calculate repayments” again.</p>
-       <div className="bg-[#0e2431]  h-[200px] rounded-[10px] relative overflow-hidden">
+       <div className="bg-[#0e2431]  h-[200px] rounded-[10px] relative xl:mt-5 overflow-hidden">
         <div className="bg-lime-300 w-full h-[5px]  rounded-t-3xl"></div>
           <div className="p-4">
             <div className="my-2">

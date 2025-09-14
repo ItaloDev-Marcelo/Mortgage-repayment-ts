@@ -1,7 +1,7 @@
 import EmpathyIcon from '../assets/illustration-empty.svg'
 const RepaymentsEmpathy = () => {
   return (
-    <section className='flex flex-col justify-center items-center text-center py-4 px-4'>
+    <section className='flex flex-col justify-center items-center text-center py-4 px-4 xl:mt-12'>
         <figure >
              <img src={EmpathyIcon} alt='' />
         </figure>

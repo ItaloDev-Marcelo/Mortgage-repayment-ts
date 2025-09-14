@@ -11,9 +11,10 @@ const Form = ({register,handleSubmit, errors, ShowResults}:FormProps) => {
   }
 
   return (
-    <form onSubmit={handleSubmit(formResult)} className='w-[300px] xl:w-[400px] py-4'>
-         <div className='flex flex-col xl:flex-row xl:justify-between pr-5.5'>
-           <legend className='text-[##133040] mb-3 md:mb-0 font-semibold'>Mortgage Calculator</legend>  
+    <form onSubmit={handleSubmit(formResult)} className='w-[300px] md:w-[400px] xl:w-[550px]
+     py-4 md:py-7 md:m-3 xl:p-2 '>
+         <div className='flex flex-col xl:flex-row xl:justify-between pr-5.5 xl:mb-5'>
+           <legend className='text-[##133040] mb-3 md:mb-0 font-semibold text-[1.2em]'>Mortgage Calculator</legend>  
            <button onClick={()=> window.location.reload()} className='border-b-1 border-gray-300 
            text-gray-500 text-left font-semibold w-[70px] mt-0.5 md:mt-0'>Clear All</button>
          </div>
@@ -21,17 +22,17 @@ const Form = ({register,handleSubmit, errors, ShowResults}:FormProps) => {
           name='mortgageAmount' title='Mortgage Amount'
           subText='£' direction='l'  />
 
-         <div className='xl:flex xl:gap-1.5'>
+         <div className='md:flex md:gap-1.5'>
          <Input register={register} error={errors}
           name='mortgageTerm' title='Mortgage Term '
-          subText='years' direction='r'
+          subText='years' direction='r' 
          />
          <Input register={register} error={errors}
           name='mortgageRate' title='Interest Rage '
           subText='%' direction='r'  />
          </div>
 
-         <div>
+         <div className='mt-3'>
             <label>Mortgage Type</label>
             <InputRadios value='Repayment' register={register} name='mortgageType' error={errors}  />
             <InputRadios value='Interest Only' register={register} name='mortgageType' error={errors}  />
