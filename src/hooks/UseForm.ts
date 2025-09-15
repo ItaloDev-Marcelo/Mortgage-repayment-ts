@@ -13,6 +13,11 @@ const UseForm = () => {
   },
    })
 
+     const clearForm = () => {
+       setShow(false)
+    reset(undefined, { keepErrors: false, keepDirty: false, keepTouched: false })
+  }
+
    const Amount = watch('mortgageAmount') || '';
    const Term  = watch('mortgageTerm') || '';
    const Rate = watch('mortgageRate') || '';
@@ -24,7 +29,7 @@ const UseForm = () => {
    setShow(valor)
   }
 
-   return {Amount,Term,Rate,MortType, register, handleSubmit, errors, reset, ShowResults, show, clearErrors}
+   return {Amount,Term,Rate,MortType, register, handleSubmit, errors, clearForm, ShowResults, show, clearErrors}
 
 }
 
