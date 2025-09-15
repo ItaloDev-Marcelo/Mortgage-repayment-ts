@@ -5,41 +5,16 @@ import RepaymentsEmpaythy from '../components/RepaymentsEmpathy';
 import RepaymentsResults from '../components/RepaymentsResults'
 import RepaymentsDisplay from '../helpers/RepaymentsDisplay';
 import { useEffect, useState } from 'react';
+import UseCalRepament from '../hooks/UseCalRepament';
 
 const CalculateRepaymentsLayout = () => {
  const {Amount,Term,Rate,MortType,register, handleSubmit, errors,  ShowResults, show, clearForm} = UseForm();
-
- 
-    const [result, setResult] = useState({
+ const {calRepayment} = UseCalRepament()
+  const [result, setResult] = useState({
      MonthPaymentResult: '',
      TotalPaymentResult : ''
-    })
-
-
-
-    console.log(show)
-   
-    const calRepayment = (Amount: number,Term: number,Rate: number, MortType: string) =>  {
-         const taxaMonth = Rate / 100 / 12;
-         const totalOfMonths =  Term * 12;
-         if(MortType === 'Repayment') {
-              const MonthPayment =
-         Amount *
-         (taxaMonth  * Math.pow(1 + taxaMonth , totalOfMonths)) /
-         (Math.pow(1 + taxaMonth , totalOfMonths) - 1);
-   
-       const TotalPayment = MonthPayment * totalOfMonths; 
-   
-             return {MonthPayment,TotalPayment}
-           }else {
-              const MonthPayment = Amount * taxaMonth
-              const TotalPayment = MonthPayment * totalOfMonths;
-             return {MonthPayment,TotalPayment}
-         }
-    }
-   
-  
-   
+   })
+ 
     const price = Number(Amount.replace(/(\D)/,''));
     const years = Number(Term);
     const porcent = Number(Rate)
@@ -58,10 +33,11 @@ const CalculateRepaymentsLayout = () => {
 
   return (
     <MortageContainer>
-        <Form register={register}  errors={errors} clearForm={clearForm}  handleSubmit={handleSubmit}  ShowResults={ShowResults}/>
+      <Form register={register}  errors={errors} clearForm={clearForm}  handleSubmit={handleSubmit}  ShowResults={ShowResults}/>
       <RepaymentsDisplay>
-        {
-          !show ? <RepaymentsEmpaythy/> : <RepaymentsResults MonthPaymentResult={result.MonthPaymentResult} TotalPaymentResult={result.TotalPaymentResult} />
+        {!show ? <RepaymentsEmpaythy/> :
+         <RepaymentsResults MonthPaymentResult={result.MonthPaymentResult}
+          TotalPaymentResult={result.TotalPaymentResult} />
         }
       </RepaymentsDisplay>
     </MortageContainer>

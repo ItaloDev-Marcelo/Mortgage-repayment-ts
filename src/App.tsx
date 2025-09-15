@@ -1,9 +1,6 @@
 import CalculateRepaymentsLayout from './layout/CalculateRepaymentsLayout'
 function App() {
-
-  return (
-    <CalculateRepaymentsLayout />
-  )
+  return <main><CalculateRepaymentsLayout /></main>
 }
 
 export default App
